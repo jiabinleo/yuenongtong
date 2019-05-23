@@ -47,6 +47,87 @@
         <img src="../../assets/img/index/016.png" alt srcset>
       </span>
     </div>
+    <div class="i-news">
+      <div class="i-content">
+        <h2 class="i-news-title">推荐新闻</h2>
+        <div class="i-list">
+          <div class="i-list-top">
+            <div class="i-list-left">
+              <img
+                src="http://b.hiphotos.baidu.com/image/pic/item/9825bc315c6034a8ef5250cec5134954082376c9.jpg"
+                alt
+                srcset
+              >
+            </div>
+            <div class="i-list-right">
+              <h2>你还在用枸杞泡水喝吗？</h2>
+              <div class="i-list-right-center">
+                <p>生活中，很多人喜欢用枸杞子泡水、煲汤或煮粥，但实际上，由于受水温、浸泡时间等因素的影响，只有部生活中，很多人喜欢用枸杞子泡水、煲汤或煮粥，但实际上，由于受水温、浸泡时间等因素的影响，只有部</p>
+              </div>
+              <div class="i-list-right-bottom">
+                <span class="i-list-right-bottom-left">2017.12.21</span>
+                <span class="i-list-right-bottom-right">阅读 183</span>
+              </div>
+            </div>
+          </div>
+          <div class="i-list-bottom">
+            <div class="i-list-bottom-top">
+              <img src="http://b.hiphotos.baidu.com/image/pic/item/9825bc315c6034a8ef5250cec5134954082376c9.jpg" alt="" srcset="">
+            </div>
+            <p class="i-list-bottom-bottom">天水麦积区南山花牛苹果基地果农连夜奋战除霜冻天水麦积区南山花牛苹果基地果农连夜奋战除霜冻</p>
+          </div>
+          <div class="i-list-bottom">
+            <div class="i-list-bottom-top">
+              <img src="http://b.hiphotos.baidu.com/image/pic/item/9825bc315c6034a8ef5250cec5134954082376c9.jpg" alt="" srcset="">
+            </div>
+            <p class="i-list-bottom-bottom">天水麦积区南山花牛苹果基地果农连夜奋战除霜冻天水麦积区南山花牛苹果基地果农连夜奋战除霜冻</p>
+          </div>
+          <div class="i-list-bottom">
+            <div class="i-list-bottom-top">
+              <img src="http://b.hiphotos.baidu.com/image/pic/item/9825bc315c6034a8ef5250cec5134954082376c9.jpg" alt="" srcset="">
+            </div>
+            <p class="i-list-bottom-bottom">天水麦积区南山花牛苹果基地果农连夜奋战除霜冻天水麦积区南山花牛苹果基地果农连夜奋战除霜冻</p>
+          </div>
+          <div class="i-list-top">
+            <div class="i-list-left">
+              <img
+                src="http://b.hiphotos.baidu.com/image/pic/item/9825bc315c6034a8ef5250cec5134954082376c9.jpg"
+                alt
+                srcset
+              >
+            </div>
+            <div class="i-list-right">
+              <h2>你还在用枸杞泡水喝吗？</h2>
+              <div class="i-list-right-center">
+                <p>生活中，很多人喜欢用枸杞子泡水、煲汤或煮粥，但实际上，由于受水温、浸泡时间等因素的影响，只有部生活中，很多人喜欢用枸杞子泡水、煲汤或煮粥，但实际上，由于受水温、浸泡时间等因素的影响，只有部</p>
+              </div>
+              <div class="i-list-right-bottom">
+                <span class="i-list-right-bottom-left">2017.12.21</span>
+                <span class="i-list-right-bottom-right">阅读 183</span>
+              </div>
+            </div>
+          </div>
+          <div class="i-list-bottom">
+            <div class="i-list-bottom-top">
+              <img src="http://b.hiphotos.baidu.com/image/pic/item/9825bc315c6034a8ef5250cec5134954082376c9.jpg" alt="" srcset="">
+            </div>
+            <p class="i-list-bottom-bottom">天水麦积区南山花牛苹果基地果农连夜奋战除霜冻天水麦积区南山花牛苹果基地果农连夜奋战除霜冻</p>
+          </div>
+          <div class="i-list-bottom">
+            <div class="i-list-bottom-top">
+              <img src="http://b.hiphotos.baidu.com/image/pic/item/9825bc315c6034a8ef5250cec5134954082376c9.jpg" alt="" srcset="">
+            </div>
+            <p class="i-list-bottom-bottom">天水麦积区南山花牛苹果基地果农连夜奋战除霜冻天水麦积区南山花牛苹果基地果农连夜奋战除霜冻</p>
+          </div>
+          <div class="i-list-bottom">
+            <div class="i-list-bottom-top">
+              <img src="http://b.hiphotos.baidu.com/image/pic/item/9825bc315c6034a8ef5250cec5134954082376c9.jpg" alt="" srcset="">
+            </div>
+            <p class="i-list-bottom-bottom">天水麦积区南山花牛苹果基地果农连夜奋战除霜冻天水麦积区南山花牛苹果基地果农连夜奋战除霜冻</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -78,6 +159,14 @@ export default {
       .get("https://www.kwantler.com.cn/v1/index/menuList")
       .then(res => {
         this.menuList = res.data.data.menuList;
+      })
+      .catch();
+    axios
+      .get(
+        "https://www.kwantler.com.cn/v1/weather/forecast?longitude=121.6544&latitude=25.1552"
+      )
+      .then(res => {
+        this.weather = res.data.data;
       })
       .catch();
     axios
@@ -225,6 +314,127 @@ export default {
         height: 16px;
         vertical-align: 0;
         line-height: 18px;
+      }
+    }
+  }
+  .i-news {
+    padding: 0 35px;
+    margin-top: 20px;
+    background: #ffffff;
+    .i-news-title {
+      position: relative;
+      color: #333333;
+      font-size: 28px;
+      height: 86px;
+      line-height: 86px;
+      border-bottom: solid 1px #eeeeee;
+      &::before {
+        position: absolute;
+        left: -35px;
+        top: 30px;
+        display: block;
+        content: "";
+        width: 4px;
+        height: 26px;
+        border-radius: 1px;
+        background: #1d9fe2;
+      }
+      &::after {
+        position: absolute;
+        left: -35px;
+        top: 30px;
+        display: block;
+        content: "";
+        width: 4px;
+        height: 26px;
+        border-radius: 1px;
+        background: #1d9fe2;
+      }
+    }
+    .i-list {
+      
+      overflow: hidden;
+      .i-list-top {
+        overflow: hidden;
+        padding: 30px 0;
+        border-bottom: solid 1px #eeeeee;
+        .i-list-left {
+          float: left;
+          img {
+            width: 260px;
+            height: 174px;
+            border-radius: 8px;
+          }
+        }
+        .i-list-right {
+          float: left;
+          width: 390px;
+          margin-left: 30px;
+          h2 {
+            color: #333333;
+            font-size: 28px;
+            font-weight: bold;
+          }
+          .i-list-right-center {
+            font-size: 24px;
+            color: #747474;
+            p {
+              line-height: 35px;
+              padding-top: 10px;
+              height: 98px;
+              width: 390px;
+              color: #747474;
+              text-overflow: ellipsis;
+              overflow: hidden;
+              display: -webkit-box;
+              -webkit-line-clamp: 3;
+              -webkit-box-orient: vertical;
+            }
+          }
+          .i-list-right-bottom {
+            padding-top: 16px;
+            span {
+              color: #999999;
+              font-size: 20px;
+              &.i-list-right-bottom-left {
+                float: left;
+              }
+              &.i-list-right-bottom-right {
+                float: right;
+              }
+            }
+          }
+        }
+      }
+      .i-list-bottom{
+        padding: 30px 0;
+        width: 206px;
+        float: left;
+        margin-left: 30px;
+        &:nth-of-type(4n+2){
+          margin-left: 0;
+        }
+        .i-list-bottom-top{
+          width: 206px;
+          height: 206px;
+          img{
+            width: 206px;
+            height: 206px;
+            border-radius: 8px;
+          }
+        }
+        .i-list-bottom-bottom{
+          line-height: 35px;
+          padding-top: 10px;
+          height: 98px;
+          color: #333333;
+          font-size: 24px;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+        }
       }
     }
   }
