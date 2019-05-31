@@ -26,7 +26,7 @@
       </van-swipe>
     </div>
     <ul class="i-menu">
-      <li v-for="(item, index) in menuList" :key="index">
+      <li v-for="(item, index) in menuList" @click="$router.push(item.code)" :key="index">
         <img :src="'https://www.kwantler.com.cn'+item['icon']" alt srcset>
         <p>{{item['title']}}</p>
       </li>
@@ -72,19 +72,31 @@
           </div>
           <div class="i-list-bottom">
             <div class="i-list-bottom-top">
-              <img src="http://b.hiphotos.baidu.com/image/pic/item/9825bc315c6034a8ef5250cec5134954082376c9.jpg" alt="" srcset="">
+              <img
+                src="http://b.hiphotos.baidu.com/image/pic/item/9825bc315c6034a8ef5250cec5134954082376c9.jpg"
+                alt
+                srcset
+              >
             </div>
             <p class="i-list-bottom-bottom">天水麦积区南山花牛苹果基地果农连夜奋战除霜冻天水麦积区南山花牛苹果基地果农连夜奋战除霜冻</p>
           </div>
           <div class="i-list-bottom">
             <div class="i-list-bottom-top">
-              <img src="http://b.hiphotos.baidu.com/image/pic/item/9825bc315c6034a8ef5250cec5134954082376c9.jpg" alt="" srcset="">
+              <img
+                src="http://b.hiphotos.baidu.com/image/pic/item/9825bc315c6034a8ef5250cec5134954082376c9.jpg"
+                alt
+                srcset
+              >
             </div>
             <p class="i-list-bottom-bottom">天水麦积区南山花牛苹果基地果农连夜奋战除霜冻天水麦积区南山花牛苹果基地果农连夜奋战除霜冻</p>
           </div>
           <div class="i-list-bottom">
             <div class="i-list-bottom-top">
-              <img src="http://b.hiphotos.baidu.com/image/pic/item/9825bc315c6034a8ef5250cec5134954082376c9.jpg" alt="" srcset="">
+              <img
+                src="http://b.hiphotos.baidu.com/image/pic/item/9825bc315c6034a8ef5250cec5134954082376c9.jpg"
+                alt
+                srcset
+              >
             </div>
             <p class="i-list-bottom-bottom">天水麦积区南山花牛苹果基地果农连夜奋战除霜冻天水麦积区南山花牛苹果基地果农连夜奋战除霜冻</p>
           </div>
@@ -109,31 +121,45 @@
           </div>
           <div class="i-list-bottom">
             <div class="i-list-bottom-top">
-              <img src="http://b.hiphotos.baidu.com/image/pic/item/9825bc315c6034a8ef5250cec5134954082376c9.jpg" alt="" srcset="">
+              <img
+                src="http://b.hiphotos.baidu.com/image/pic/item/9825bc315c6034a8ef5250cec5134954082376c9.jpg"
+                alt
+                srcset
+              >
             </div>
             <p class="i-list-bottom-bottom">天水麦积区南山花牛苹果基地果农连夜奋战除霜冻天水麦积区南山花牛苹果基地果农连夜奋战除霜冻</p>
           </div>
           <div class="i-list-bottom">
             <div class="i-list-bottom-top">
-              <img src="http://b.hiphotos.baidu.com/image/pic/item/9825bc315c6034a8ef5250cec5134954082376c9.jpg" alt="" srcset="">
+              <img
+                src="http://b.hiphotos.baidu.com/image/pic/item/9825bc315c6034a8ef5250cec5134954082376c9.jpg"
+                alt
+                srcset
+              >
             </div>
             <p class="i-list-bottom-bottom">天水麦积区南山花牛苹果基地果农连夜奋战除霜冻天水麦积区南山花牛苹果基地果农连夜奋战除霜冻</p>
           </div>
           <div class="i-list-bottom">
             <div class="i-list-bottom-top">
-              <img src="http://b.hiphotos.baidu.com/image/pic/item/9825bc315c6034a8ef5250cec5134954082376c9.jpg" alt="" srcset="">
+              <img
+                src="http://b.hiphotos.baidu.com/image/pic/item/9825bc315c6034a8ef5250cec5134954082376c9.jpg"
+                alt
+                srcset
+              >
             </div>
             <p class="i-list-bottom-bottom">天水麦积区南山花牛苹果基地果农连夜奋战除霜冻天水麦积区南山花牛苹果基地果农连夜奋战除霜冻</p>
           </div>
         </div>
       </div>
     </div>
+    <footer-menu :idx="0"></footer-menu>
   </div>
 </template>
 <script>
 import Vue from "vue";
 import axios from "axios";
 import { Row, Col, Search, Swipe, SwipeItem, Lazyload } from "vant";
+import FooterMenu from "../../components/footer";
 Vue.use(Row)
   .use(Col)
   .use(Search)
@@ -185,6 +211,9 @@ export default {
       console.log(url);
       // this.$router.push(url);
     }
+  },
+  components: {
+    FooterMenu
   }
 };
 </script>
@@ -352,7 +381,6 @@ export default {
       }
     }
     .i-list {
-      
       overflow: hidden;
       .i-list-top {
         overflow: hidden;
@@ -406,24 +434,24 @@ export default {
           }
         }
       }
-      .i-list-bottom{
+      .i-list-bottom {
         padding: 30px 0;
         width: 206px;
         float: left;
         margin-left: 30px;
-        &:nth-of-type(4n+2){
+        &:nth-of-type(4n + 2) {
           margin-left: 0;
         }
-        .i-list-bottom-top{
+        .i-list-bottom-top {
           width: 206px;
           height: 206px;
-          img{
+          img {
             width: 206px;
             height: 206px;
             border-radius: 8px;
           }
         }
-        .i-list-bottom-bottom{
+        .i-list-bottom-bottom {
           line-height: 35px;
           padding-top: 10px;
           height: 98px;
