@@ -10,7 +10,7 @@
                 <img src="../../assets/img/footer/hot.svg" alt> 热门问题
               </h3>
               <ul>
-                <!-- <li v-for="(item, index)in tipTab" :key="index"></li> -->
+                <li v-for="(item, index) in tipTab" :key="index">{{item.name}}</li>
               </ul>
             </div>
           </div>
@@ -45,14 +45,24 @@ export default {
     return {
       active: 0,
       tipTab: [
-        "农业问题",
-        "农业问题",
-        "农业问题",
-        "农业问题",
-        "农业问题",
-        "农业问题",
-        "农业问题",
-        "农业问题"
+        {
+          name: "农业问题"
+        },
+        {
+          name: "农业问题"
+        },
+        {
+          name: "农业问题"
+        },
+        {
+          name: "农业问题"
+        },
+        {
+          name: "农业问题"
+        },
+        {
+          name: "农业问题"
+        }
       ]
     };
   },

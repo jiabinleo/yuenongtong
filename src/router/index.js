@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-const Index = (resolve) => {
+const Index = resolve => {
   import('../pages/index').then(module => {
     resolve(module)
   })
@@ -13,6 +13,11 @@ const Fwzx = (resolve) => {
 }
 const Nyzx = (resolve) => {
   import('../pages/nyzx').then(module => {
+    resolve(module)
+  })
+}
+const Xw = resolve => {
+  import('../pages/xw').then(module => {
     resolve(module)
   })
 }
@@ -65,6 +70,11 @@ export default new Router({
       path: '/zxtb',
       name: 'zxtb',
       component: Zxtb
+    },
+    {
+      path: '/xw',
+      name: 'xw',
+      component: Xw
     }
   ]
 })

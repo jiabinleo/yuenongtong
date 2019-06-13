@@ -50,104 +50,27 @@
     <div class="i-news">
       <div class="i-content">
         <h2 class="i-news-title">推荐新闻</h2>
-        <div class="i-list">
-          <div class="i-list-top">
+        <div v-for="(item,index) in newsList" class="i-list" @click="$router.push('xw')" :key="index">
+          <div v-if="index%4" class="i-list-bottom">
+            <div class="i-list-bottom-top">
+              <img :src="'https://www.kwantler.com.cn'+item.iconTwo" alt srcset>
+            </div>
+            <p class="i-list-bottom-bottom">{{item.brief}}</p>
+          </div>
+          <div v-else class="i-list-top">
             <div class="i-list-left">
-              <img
-                src="http://b.hiphotos.baidu.com/image/pic/item/9825bc315c6034a8ef5250cec5134954082376c9.jpg"
-                alt
-                srcset
-              >
+              <img :src="'https://www.kwantler.com.cn'+item.iconTwo" alt srcset>
             </div>
             <div class="i-list-right">
-              <h2>你还在用枸杞泡水喝吗？</h2>
+              <h2>{{item.title}}</h2>
               <div class="i-list-right-center">
-                <p>生活中，很多人喜欢用枸杞子泡水、煲汤或煮粥，但实际上，由于受水温、浸泡时间等因素的影响，只有部生活中，很多人喜欢用枸杞子泡水、煲汤或煮粥，但实际上，由于受水温、浸泡时间等因素的影响，只有部</p>
+                <p>{{item.brief}}</p>
               </div>
               <div class="i-list-right-bottom">
-                <span class="i-list-right-bottom-left">2017.12.21</span>
-                <span class="i-list-right-bottom-right">阅读 183</span>
+                <span class="i-list-right-bottom-left">{{item.publishTime}}</span>
+                <span class="i-list-right-bottom-right">阅读 {{item.reading}}</span>
               </div>
             </div>
-          </div>
-          <div class="i-list-bottom">
-            <div class="i-list-bottom-top">
-              <img
-                src="http://b.hiphotos.baidu.com/image/pic/item/9825bc315c6034a8ef5250cec5134954082376c9.jpg"
-                alt
-                srcset
-              >
-            </div>
-            <p class="i-list-bottom-bottom">天水麦积区南山花牛苹果基地果农连夜奋战除霜冻天水麦积区南山花牛苹果基地果农连夜奋战除霜冻</p>
-          </div>
-          <div class="i-list-bottom">
-            <div class="i-list-bottom-top">
-              <img
-                src="http://b.hiphotos.baidu.com/image/pic/item/9825bc315c6034a8ef5250cec5134954082376c9.jpg"
-                alt
-                srcset
-              >
-            </div>
-            <p class="i-list-bottom-bottom">天水麦积区南山花牛苹果基地果农连夜奋战除霜冻天水麦积区南山花牛苹果基地果农连夜奋战除霜冻</p>
-          </div>
-          <div class="i-list-bottom">
-            <div class="i-list-bottom-top">
-              <img
-                src="http://b.hiphotos.baidu.com/image/pic/item/9825bc315c6034a8ef5250cec5134954082376c9.jpg"
-                alt
-                srcset
-              >
-            </div>
-            <p class="i-list-bottom-bottom">天水麦积区南山花牛苹果基地果农连夜奋战除霜冻天水麦积区南山花牛苹果基地果农连夜奋战除霜冻</p>
-          </div>
-          <div class="i-list-top">
-            <div class="i-list-left">
-              <img
-                src="http://b.hiphotos.baidu.com/image/pic/item/9825bc315c6034a8ef5250cec5134954082376c9.jpg"
-                alt
-                srcset
-              >
-            </div>
-            <div class="i-list-right">
-              <h2>你还在用枸杞泡水喝吗？</h2>
-              <div class="i-list-right-center">
-                <p>生活中，很多人喜欢用枸杞子泡水、煲汤或煮粥，但实际上，由于受水温、浸泡时间等因素的影响，只有部生活中，很多人喜欢用枸杞子泡水、煲汤或煮粥，但实际上，由于受水温、浸泡时间等因素的影响，只有部</p>
-              </div>
-              <div class="i-list-right-bottom">
-                <span class="i-list-right-bottom-left">2017.12.21</span>
-                <span class="i-list-right-bottom-right">阅读 183</span>
-              </div>
-            </div>
-          </div>
-          <div class="i-list-bottom">
-            <div class="i-list-bottom-top">
-              <img
-                src="http://b.hiphotos.baidu.com/image/pic/item/9825bc315c6034a8ef5250cec5134954082376c9.jpg"
-                alt
-                srcset
-              >
-            </div>
-            <p class="i-list-bottom-bottom">天水麦积区南山花牛苹果基地果农连夜奋战除霜冻天水麦积区南山花牛苹果基地果农连夜奋战除霜冻</p>
-          </div>
-          <div class="i-list-bottom">
-            <div class="i-list-bottom-top">
-              <img
-                src="http://b.hiphotos.baidu.com/image/pic/item/9825bc315c6034a8ef5250cec5134954082376c9.jpg"
-                alt
-                srcset
-              >
-            </div>
-            <p class="i-list-bottom-bottom">天水麦积区南山花牛苹果基地果农连夜奋战除霜冻天水麦积区南山花牛苹果基地果农连夜奋战除霜冻</p>
-          </div>
-          <div class="i-list-bottom">
-            <div class="i-list-bottom-top">
-              <img
-                src="http://b.hiphotos.baidu.com/image/pic/item/9825bc315c6034a8ef5250cec5134954082376c9.jpg"
-                alt
-                srcset
-              >
-            </div>
-            <p class="i-list-bottom-bottom">天水麦积区南山花牛苹果基地果农连夜奋战除霜冻天水麦积区南山花牛苹果基地果农连夜奋战除霜冻</p>
           </div>
         </div>
       </div>
@@ -171,7 +94,8 @@ export default {
     return {
       bannerList: [],
       menuList: [],
-      weather: {}
+      weather: {},
+      newsList: []
     };
   },
   mounted() {
@@ -196,11 +120,10 @@ export default {
       })
       .catch();
     axios
-      .get(
-        "https://www.kwantler.com.cn/v1/weather/forecast?longitude=121.6544&latitude=25.1552"
-      )
+      .get("https://www.kwantler.com.cn/v1/news/indexNewsList")
       .then(res => {
-        this.weather = res.data.data;
+        this.newsList = res.data.data.newsList;
+        console.log(this.newsList[0]);
       })
       .catch();
   },
@@ -350,6 +273,8 @@ export default {
     padding: 0 35px;
     margin-top: 20px;
     background: #ffffff;
+    overflow: hidden;
+    margin-bottom: 100px;
     .i-news-title {
       position: relative;
       color: #333333;
@@ -381,8 +306,14 @@ export default {
       }
     }
     .i-list {
-      overflow: hidden;
+      float: left;
+      &:nth-of-type(4n + 2) {
+        .i-list-bottom {
+          margin-left: 0;
+        }
+      }
       .i-list-top {
+        float: left;
         overflow: hidden;
         padding: 30px 0;
         border-bottom: solid 1px #eeeeee;
@@ -402,6 +333,9 @@ export default {
             color: #333333;
             font-size: 28px;
             font-weight: bold;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
           }
           .i-list-right-center {
             font-size: 24px;
@@ -439,9 +373,6 @@ export default {
         width: 206px;
         float: left;
         margin-left: 30px;
-        &:nth-of-type(4n + 2) {
-          margin-left: 0;
-        }
         .i-list-bottom-top {
           width: 206px;
           height: 206px;

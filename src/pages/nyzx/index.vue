@@ -12,7 +12,7 @@
             </van-swipe>
             <div class="nyzx-list">
               <ul>
-                <li v-for="(item,index) in list" :key="index">
+                <li v-for="(item,index) in list" :key="index" @click="$router.push('xw')">
                   <div class="nyzx-text">
                     <h2 v-text="item.title"></h2>
                     <p class="nyzx-text-content" v-text="item.brief"></p>
