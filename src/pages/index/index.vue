@@ -100,27 +100,27 @@ export default {
   },
   mounted() {
     axios
-      .get("https://www.kwantler.com.cn/v1/index/bannerList?category=index")
+      .get("/v1/index/bannerList?category=index")
       .then(res => {
         this.bannerList = res.data.data.bannerList;
       })
       .catch();
     axios
-      .get("https://www.kwantler.com.cn/v1/index/menuList")
+      .get("/v1/index/menuList")
       .then(res => {
         this.menuList = res.data.data.menuList;
       })
       .catch();
     axios
       .get(
-        "https://www.kwantler.com.cn/v1/weather/forecast?longitude=121.6544&latitude=25.1552"
+        "/v1/weather/forecast?longitude=121.6544&latitude=25.1552"
       )
       .then(res => {
         this.weather = res.data.data;
       })
       .catch();
     axios
-      .get("https://www.kwantler.com.cn/v1/news/indexNewsList")
+      .get("/v1/news/indexNewsList")
       .then(res => {
         this.newsList = res.data.data.newsList;
         console.log(this.newsList[0]);

@@ -12,7 +12,11 @@
             </van-swipe>
             <div class="nyzx-list">
               <ul>
-                <li v-for="(item,index) in list" :key="index" @click="$router.push('xw')">
+                <li
+                  v-for="(item,index) in list"
+                  :key="index"
+                  @click="$router.push({path:`xw/${item.id}`,query:{title:xwTitle}})"
+                >
                   <div class="nyzx-text">
                     <h2 v-text="item.title"></h2>
                     <p class="nyzx-text-content" v-text="item.brief"></p>
@@ -52,29 +56,35 @@ export default {
       label: "",
       pageNum: 1,
       pageSize: 10,
-      list: []
+      list: [],
+      xwTitle: ""
     };
   },
   components: {
     NavHeader
   },
   mounted() {
-    axios
-      .get("https://www.kwantler.com.cn/v1/news/newsCategory")
-      .then(res => {
-        if (res.status == 200) {
-          this.newsCategoryList = res.data.data.newsCategoryList;
-          this.getNews(0);
-        }
-      })
-      .catch();
+    axios.get(`/v1/news/newsCategory`).then(res => {
+      // if (res.code == 0) {
+      console.log(res.data.code == "0");
+      this.newsCategoryList = res.data.data.newsCategoryList;
+      this.getNews(0);
+      // }
+    });
+    // this.http.get(`/v1/news/newsCategory`).then(res => {
+    //   if (res.code == 0) {
+    //     console.log(res.data.newsCategoryList);
+    //     this.newsCategoryList = res.data.newsCategoryList;
+    //     this.getNews(0);
+    //   }
+    // });
   },
   methods: {
     getNews(active) {
-      console.log(this.newsCategoryList[active].categoryCode);
+      this.xwTitle = this.newsCategoryList[active].categoryName;
       axios
         .get(
-          `https://www.kwantler.com.cn/v1/news/topNewsListByCategory?category=${
+          `/v1/news/topNewsListByCategory?category=${
             this.newsCategoryList[active].categoryCode
           }`
         )
@@ -91,7 +101,7 @@ export default {
         .catch();
       axios
         .get(
-          `https://www.kwantler.com.cn/v1/news/newsList?category=${
+          `/v1/news/newsList?category=${
             this.newsCategoryList[active].categoryCode
           }& title=${this.title}& label=${this.label}& pageNum=${
             this.pageNum

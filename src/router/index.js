@@ -72,7 +72,7 @@ export default new Router({
       component: Zxtb
     },
     {
-      path: '/xw',
+      path: '/xw/:id',
       name: 'xw',
       component: Xw
     }
