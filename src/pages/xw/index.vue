@@ -6,9 +6,11 @@
       <h3>
         <img class="xw-userLogo" :src="newsList.authorIcon" alt="Icon" @error="imgError($event)">
         <p>{{newsList.author}}{{newsList.publishTime|filetime}}</p>
-        <img class="xw-zz" src alt srcset>
+        <img v-show="newsList.reprint=='1'" class="xw-zz" src="../../assets/img/index/zz.png">
       </h3>
-      <div class="xw-content" v-html="newsList.content"></div>
+      <div class="xw-content">
+        <div v-html="newsList.content"></div>
+      </div>
     </section>
   </div>
 </template>
@@ -60,6 +62,7 @@ img {
   width: 100px;
 }
 #xw {
+  background: #ffffff;
   section {
     padding: 120px 35px 100px 35px;
     h2 {
@@ -67,16 +70,36 @@ img {
       color: #333333;
       font-weight: bold;
       line-height: 40px;
+      text-align: center;
+    }
+    h3 {
+      overflow: hidden;
+      padding: 30px 0;
+      .xw-userLogo {
+        float: left;
+        width: 45px;
+        height: 45px;
+        margin-top: -10px;
+      }
+      .xw-zz {
+        float: left;
+        width: 50px;
+        height: 25px;
+        margin-top: 0px;
+      }
+      p {
+        float: left;
+        padding: 0 14px;
+        color: #999999;
+        font-size: 22px;
+      }
     }
     .xw-content {
-      overflow: hidden;
-      p {
-        width: 100px;
-        height: 100px;
-        overflow: hidden;
+      /deep/ img {
+        width: 100%;
       }
-      img {
-        width: 100px !important;
+      /deep/p {
+        line-height: 50px;
       }
     }
   }

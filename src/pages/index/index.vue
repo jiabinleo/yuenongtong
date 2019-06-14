@@ -50,7 +50,12 @@
     <div class="i-news">
       <div class="i-content">
         <h2 class="i-news-title">推荐新闻</h2>
-        <div v-for="(item,index) in newsList" class="i-list" @click="$router.push('xw')" :key="index">
+        <div
+          v-for="(item,index) in newsList"
+          class="i-list"
+          @click="$router.push('xw')"
+          :key="index"
+        >
           <div v-if="index%4" class="i-list-bottom">
             <div class="i-list-bottom-top">
               <img :src="'https://www.kwantler.com.cn'+item.iconTwo" alt srcset>
@@ -112,9 +117,7 @@ export default {
       })
       .catch();
     axios
-      .get(
-        "/v1/weather/forecast?longitude=121.6544&latitude=25.1552"
-      )
+      .get("/v1/weather/forecast?longitude=121.6544&latitude=25.1552")
       .then(res => {
         this.weather = res.data.data;
       })
@@ -142,6 +145,7 @@ export default {
 </script>
 <style lang="less" scoped>
 #index {
+  position: relative;
   .i-header {
     position: fixed;
     z-index: 99;
@@ -396,6 +400,12 @@ export default {
         }
       }
     }
+  }
+  #my {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
   }
 }
 </style>

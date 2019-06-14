@@ -65,19 +65,10 @@ export default {
   },
   mounted() {
     axios.get(`/v1/news/newsCategory`).then(res => {
-      // if (res.code == 0) {
       console.log(res.data.code == "0");
       this.newsCategoryList = res.data.data.newsCategoryList;
       this.getNews(0);
-      // }
     });
-    // this.http.get(`/v1/news/newsCategory`).then(res => {
-    //   if (res.code == 0) {
-    //     console.log(res.data.newsCategoryList);
-    //     this.newsCategoryList = res.data.newsCategoryList;
-    //     this.getNews(0);
-    //   }
-    // });
   },
   methods: {
     getNews(active) {
@@ -128,8 +119,12 @@ export default {
   .nyzx-content {
     /deep/.van-tabs__wrap {
       height: 80px;
+      .van-tab--active{
+        color: #1d9fe2;
+      }
       .van-ellipsis {
         line-height: 80px;
+        font-size: 28px;
       }
       .van-tabs__line {
         background-color: #1d9fe2;
@@ -175,6 +170,12 @@ export default {
                   font-size: 28px;
                   color: #333333;
                   line-height: 40px;
+                  height:80px;
+                  overflow: hidden;
+                  display: -webkit-box;
+                  -webkit-box-orient: vertical;
+                  -webkit-line-clamp:2;
+                  text-overflow: ellipsis;
                 }
                 .nyzx-text-content {
                   font-size: 24px;

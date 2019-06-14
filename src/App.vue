@@ -1,12 +1,23 @@
 <template>
   <div id="app">
     <router-view/>
+    <my v-on:isShowFn="isShowFn(111)"></my>
   </div>
 </template>
 
 <script>
+import My from "./components/my";
 export default {
-  name: "App"
+  name: "App",
+  components: {
+    My
+  },
+  methods: {
+    isShowFn(data) {
+      console.log(data);
+      console.log("///");
+    }
+  }
 };
 </script>
 window.onload = function() {

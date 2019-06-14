@@ -1,11 +1,6 @@
 <template>
   <div id="footerMenu">
-    <div
-      v-for="(item,index) in menu"
-      class="footer-item"
-      @click="$router.push(item.page)"
-      :key="index"
-    >
+    <div v-for="(item,index) in menu" class="footer-item" @click="ovepage(item.page)" :key="index">
       <img :src="index===idx?item.iconSelect:item.icon" alt>
       <p :class="{colorSelect:index===idx}">{{item.name}}</p>
     </div>
@@ -48,6 +43,16 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    ovepage(page) {
+      if (page == "wo") {
+        console.log("wo");
+        this.$emit("isShowFn", true);
+      } else {
+        this.$router.push(page);
+      }
+    }
   }
 };
 </script>
