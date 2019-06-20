@@ -80,7 +80,7 @@
         </div>
       </div>
     </div>
-    <footer-menu :idx="0"></footer-menu>
+    <footer-menu @isShowF="isShowI" :idx="0"></footer-menu>
   </div>
 </template>
 <script>
@@ -126,7 +126,6 @@ export default {
       .get("/v1/news/indexNewsList")
       .then(res => {
         this.newsList = res.data.data.newsList;
-        console.log(this.newsList[0]);
       })
       .catch();
   },
@@ -136,6 +135,9 @@ export default {
     getUrl(url) {
       console.log(url);
       // this.$router.push(url);
+    },
+    isShowI(data) {
+      this.$emit("isShowA", data);
     }
   },
   components: {

@@ -1,7 +1,7 @@
 <template>
   <div id="bd">
     <nav-header title="保单"></nav-header>
-    <footer-menu :idx="2"></footer-menu>
+    <footer-menu @isShowF="isShowI" :idx="2"></footer-menu>
   </div>
 </template>
 <script>
@@ -11,6 +11,11 @@ export default {
   components: {
     FooterMenu,
     NavHeader
+  },
+  methods: {
+    isShowI(data) {
+      this.$emit("isShowA", data);
+    }
   }
 };
 </script>

@@ -31,7 +31,6 @@ export default {
   },
   mounted() {
     this.xwtitle = this.$router.currentRoute.query.title;
-    console.log(this.$router.currentRoute);
     axios
       .get(`/v1/news/detail/${this.$router.currentRoute.params.id}`)
       .then(res => {

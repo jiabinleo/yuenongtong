@@ -32,3 +32,13 @@ proxyTable: {
       },
     },
 ```
+
+##组件传值
+```
+  子组件向父组件传值  
+    子组件 this.$emit("Fn1", data);
+    父组件 @Fn1="Fn2"
+          Fn2(data) {
+            this.$refs.showMy.子组件函数名(data); //调用子组件函数 在子组件中添加res="showMy"
+          }
+```

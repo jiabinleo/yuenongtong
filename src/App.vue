@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <router-view/>
-    <my v-on:isShowFn="isShowFn(111)"></my>
+    <router-view @isShowA="isShowFnA"/>
+    <my ref="showMy"></my>
   </div>
 </template>
 
@@ -9,13 +9,17 @@
 import My from "./components/my";
 export default {
   name: "App",
+  data() {
+    return {
+      isShowFB: false
+    };
+  },
   components: {
     My
   },
   methods: {
-    isShowFn(data) {
-      console.log(data);
-      console.log("///");
+    isShowFnA(data) {
+      this.$refs.showMy.showMyFn(data);
     }
   }
 };

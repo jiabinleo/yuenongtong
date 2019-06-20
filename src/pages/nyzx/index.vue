@@ -65,7 +65,6 @@ export default {
   },
   mounted() {
     axios.get(`/v1/news/newsCategory`).then(res => {
-      console.log(res.data.code == "0");
       this.newsCategoryList = res.data.data.newsCategoryList;
       this.getNews(0);
     });

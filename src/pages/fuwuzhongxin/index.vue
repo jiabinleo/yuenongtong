@@ -31,7 +31,7 @@
         </van-tab>
       </van-tabs>
     </div>
-    <footer-menu :idx="1"></footer-menu>
+    <footer-menu @isShowF="isShowI" :idx="1"></footer-menu>
   </div>
 </template>
 <script>
@@ -69,6 +69,11 @@ export default {
   components: {
     FooterMenu,
     NavHeader
+  },
+  methods: {
+    isShowI(data) {
+      this.$emit("isShowA", data);
+    }
   }
 };
 </script>

@@ -21,6 +21,12 @@ export default {
     return {
       show: false
     };
+  },
+  mounted() {},
+  methods: {
+    showMyFn() {
+      this.show = true;
+    }
   }
 };
 </script>

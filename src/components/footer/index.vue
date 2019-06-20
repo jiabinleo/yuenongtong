@@ -48,7 +48,7 @@ export default {
     ovepage(page) {
       if (page == "wo") {
         console.log("wo");
-        this.$emit("isShowFn", true);
+        this.$emit("isShowF", true);
       } else {
         this.$router.push(page);
       }
