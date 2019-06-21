@@ -36,6 +36,11 @@ const Zxtb = (resolve) => {
     resolve(module)
   })
 }
+const Login = (resolve) => {
+  import('../pages/login').then(module => {
+    resolve(module)
+  })
+}
 
 Vue.use(Router)
 
@@ -75,6 +80,11 @@ export default new Router({
       path: '/xw/:id',
       name: 'xw',
       component: Xw
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login
     }
   ]
 })

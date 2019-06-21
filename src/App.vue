@@ -35,4 +35,7 @@ window.onload = function() {
   })
 }
 <style>
+#app {
+  background: #ffffff;
+}
 </style>
