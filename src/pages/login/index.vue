@@ -1,20 +1,22 @@
 <template>
   <div id="login">
-    <h1>
-      <img :src="loginImg" alt>
-    </h1>
-    <h2>
-      <img :src="briefImg" alt>
-    </h2>
-    <div class="cell">
-      <van-cell-group>
-        <van-field left-icon="contact" v-model="account" clearable placeholder="请输入用户名"/>
-      </van-cell-group>
-      <van-cell-group>
-        <van-field left-icon="contact" v-model="password" type="password" placeholder="请输入密码"/>
-      </van-cell-group>
+    <div class="login-content">
+      <h1>
+        <img :src="loginImg" alt>
+      </h1>
+      <h2>
+        <img :src="briefImg" alt>
+      </h2>
+      <div class="cell">
+        <van-cell-group>
+          <van-field left-icon="contact" v-model="account" clearable placeholder="请输入用户名"/>
+        </van-cell-group>
+        <van-cell-group>
+          <van-field left-icon="contact" v-model="password" type="password" placeholder="请输入密码"/>
+        </van-cell-group>
+      </div>
+      <van-button type="info" @click="testing">登录</van-button>
     </div>
-    <van-button type="info" @click="testing">登录</van-button>
   </div>
 </template>
 <script>
@@ -70,55 +72,58 @@ export default {
 </script>
 <style lang="less" scoped>
 #login {
-  padding: 140px 35px 0 35px;
   height: 100vh;
-  h1 {
-    text-align: center;
-    img {
-      width: 200px;
+  .login-content {
+    padding: 140px 35px 0 35px;
+
+    h1 {
+      text-align: center;
+      img {
+        width: 200px;
+      }
     }
-  }
-  h2 {
-    margin-top: 34px;
-    text-align: center;
-    img {
-      width: 500px;
+    h2 {
+      margin-top: 34px;
+      text-align: center;
+      img {
+        width: 500px;
+      }
     }
-  }
-  .cell {
-    margin-top: 80px;
-    /deep/.van-cell-group {
-      background: #ffffff;
-      margin-top: 30px;
-      border: solid #eeeeee 1px;
-      padding: 1px;
-      border-radius: 10px;
-      overflow: hidden;
-      .van-cell {
-        padding: 0 30px;
-        .van-field__left-icon {
-          line-height: 80px;
-          margin-right: 34px;
-        }
-        .van-field__control {
-          height: 80px;
-          line-height: 80px;
-          font-size: 24px;
+    .cell {
+      margin-top: 80px;
+      /deep/.van-cell-group {
+        background: #ffffff;
+        margin-top: 30px;
+        border: solid #eeeeee 1px;
+        padding: 1px;
+        border-radius: 10px;
+        overflow: hidden;
+        .van-cell {
+          padding: 0 30px;
+          .van-field__left-icon {
+            line-height: 80px;
+            margin-right: 34px;
+          }
+          .van-field__control {
+            height: 80px;
+            line-height: 80px;
+            font-size: 24px;
+          }
         }
       }
     }
-  }
-  /deep/.van-button {
-    margin-top: 50px;
-    width: 680px;
-    height: 80px;
-    border-radius: 10px;
-    overflow: hidden;
-    background-color: #34b8ef;
-    border: solid 1px #34b8ef;
-    .van-button__text {
-      font-size: 28px;
-      letter-spacing: 6px;
+    /deep/.van-button {
+      margin-top: 50px;
+      width: 680px;
+      height: 80px;
+      border-radius: 10px;
+      overflow: hidden;
+      background-color: #34b8ef;
+      border: solid 1px #34b8ef;
+      .van-button__text {
+        font-size: 28px;
+        letter-spacing: 6px;
+      }
     }
   }
 }

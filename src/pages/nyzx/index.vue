@@ -12,11 +12,7 @@
             </van-swipe>
             <div class="nyzx-list">
               <ul>
-                <li
-                  v-for="(item,index) in list"
-                  :key="index"
-                  @click="$router.push({path:`xw/${item.id}`,query:{title:xwTitle}})"
-                >
+                <li v-for="(item,index) in list" :key="index" @click="$router.push({path:`xw/${item.id}`,query:{title:xwTitle}})">
                   <div class="nyzx-text">
                     <h2 v-text="item.title"></h2>
                     <p class="nyzx-text-content" v-text="item.brief"></p>
@@ -118,7 +114,7 @@ export default {
   .nyzx-content {
     /deep/.van-tabs__wrap {
       height: 80px;
-      .van-tab--active{
+      .van-tab--active {
         color: #1d9fe2;
       }
       .van-ellipsis {
@@ -169,11 +165,11 @@ export default {
                   font-size: 28px;
                   color: #333333;
                   line-height: 40px;
-                  height:80px;
+                  height: 80px;
                   overflow: hidden;
                   display: -webkit-box;
                   -webkit-box-orient: vertical;
-                  -webkit-line-clamp:2;
+                  -webkit-line-clamp: 2;
                   text-overflow: ellipsis;
                 }
                 .nyzx-text-content {
