@@ -36,6 +36,7 @@
 </template>
 <script>
 import Vue from "vue";
+import axios from "axios";
 import { Tab, Tabs } from "vant";
 import FooterMenu from "../../components/footer";
 import NavHeader from "../../components/NavHeader";
@@ -65,6 +66,14 @@ export default {
         }
       ]
     };
+  },
+  mounted() {
+    axios
+      .get("/v1/index/bannerList?category=index")
+      .then(res => {
+        console.log(res);
+      })
+      .catch();
   },
   components: {
     FooterMenu,

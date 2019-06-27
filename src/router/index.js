@@ -36,6 +36,26 @@ const Zxtb = (resolve) => {
     resolve(module)
   })
 }
+const Wydk = (resolve) => {
+  import('../pages/wydk').then(module => {
+    resolve(module)
+  })
+}
+const Nyqx = (resolve) => {
+  import('../pages/nyqx').then(module => {
+    resolve(module)
+  })
+}
+const Zwyy = (resolve) => {
+  import('../pages/zwyy').then(module => {
+    resolve(module)
+  })
+}
+const Gqsc = (resolve) => {
+  import('../pages/gqsc').then(module => {
+    resolve(module)
+  })
+}
 const Login = (resolve) => {
   import('../pages/login').then(module => {
     resolve(module)
@@ -75,6 +95,31 @@ export default new Router({
       path: '/zxtb',
       name: 'zxtb',
       component: Zxtb
+    },
+    {
+      path: '/wydk',
+      name: 'wydk',
+      component: Wydk
+    },
+    {
+      path: '/nyqx',
+      name: 'nyqx',
+      component: Nyqx
+    },
+    {
+      path: '/zwyy',
+      name: 'zwyy',
+      component: Zwyy
+    },
+    {
+      path: '/zwyy',
+      name: 'zwyy',
+      component: Zwyy
+    },
+    {
+      path: '/gqsc',
+      name: 'gqsc',
+      component: Gqsc
     },
     {
       path: '/xw/:id',
